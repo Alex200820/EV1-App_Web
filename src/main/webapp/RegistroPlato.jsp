@@ -5,11 +5,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Registro Plato Elitec</title>
-	<script src="js/bootstrap.js" type="text/javascript"></script>
-	<script src="js/bootstrap.bundle.js" type="text/javascript"></script>
-	<script src="js/bootstrap.esm.js" type="text/javascript"></script>
-	<script src="js/jquery-4.0.0.min.js" type="text/javascript"></script>
-    <script src="js/sweetalert2@11.js"></script>
+	<script src="js/jquery-4.0.0.min.js"></script>
+	<script src="js/bootstrap.bundle.js"></script>
+	<script src="js/sweetalert2@11.js"></script>
 	
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/bootstrap-grid.css" rel="stylesheet">
@@ -98,7 +96,7 @@
 	            return;
 	        }
 	
-	     
+	        
 	        $.ajax({
 				url: 'registraPlatoAlias',
 				type: 'POST',
