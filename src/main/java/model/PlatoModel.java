@@ -20,13 +20,13 @@ public class PlatoModel {
 			cn = MySqlDBConexion.getConexion();
 			
 			//2 Crear el SQL de insercion
-			String sql = "INSERT INTO plato (nombre, proteinaPlato, categoria, tiempoPreparacion, disponibilidad, popularidad, precio) VALUES (?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO plato (nombre, proteinaPlato, idCategoria, tiempoPreparacion, disponibilidad, popularidad, precio) VALUES (?,?,?,?,?,?,?)";
 			
 			//3 Crear el PreparedStatement
 			ps = cn.prepareStatement(sql);
 			ps.setString(1, obj.getNombre());
 			ps.setString(2, obj.getProteinaPlato());
-			ps.setString(3, obj.getCategoria());
+			ps.setInt(3, obj.getIdCategoria());
 			ps.setInt(4, obj.getTiempoPreparacion());
 			ps.setString(5, obj.getDisponibilidad());
 			ps.setString(6, obj.getPopularidad());
@@ -77,7 +77,7 @@ public class PlatoModel {
 				obj.setIdPlato(rs.getInt("idPlato"));
 				obj.setNombre(rs.getString("nombre"));
 				obj.setProteinaPlato(rs.getString("proteinaPlato"));
-				obj.setCategoria(rs.getString("categoria"));
+				obj.setIdCategoria(rs.getInt("idCategoria"));
 				obj.setTiempoPreparacion(rs.getInt("tiempoPreparacion"));
 				obj.setDisponibilidad(rs.getString("disponibilidad"));
 				obj.setPopularidad(rs.getString("popularidad"));

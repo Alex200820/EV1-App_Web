@@ -28,8 +28,8 @@
 					 <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre" maxlength="30">
 			 </div>
 			 <div class="col-3">
-	                    <button class="btn btn-primary" id="btnBuscar"style="width: 200px">Buscar</button>
-	            </div>        
+	                 <button class="btn btn-primary" id="btnBuscar"style="width: 200px">Buscar</button>
+	         </div>        
 		 </div>
 		
 		 <div class="row" style="margin-top: 2%;">
@@ -99,7 +99,7 @@ function agregarGrilla(lista){
 				{data: "idPlato",className:'text-center'},
 				{data: "nombre",className:'text-center'},
 				{data: "proteinaPlato",className:'text-center'},
-				{data: "categoria", className:'text-center'},
+				{data: "idCategoria", className:'text-center'},
 				{data: "tiempoPreparacion", className:'text-center'},
 				{data: "disponibilidad",className:'text-center'},
 				{data: "popularidad", className:'text-center'},

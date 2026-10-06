@@ -34,8 +34,8 @@
 			</div>
 			<div class="row" style="margin-top: 2%;">	
 				<div class="col-4">
-					<label for="pais">Categoria</label> 
-					<input type="text" class="form-control" id="categoria" name="categoria" placeholder="Ej. Sopa, ensalada, arroces, pastas" maxlength="30" required>
+					<label for="pais">Categoria (números)</label> 
+					<input type="text" class="form-control" id="idCategoria" name="idCategoria" placeholder="Ej. 1 = Carne de Res / Parillas" maxlength="30" required>
 					<div class="invalid-feedback">Ingrese la categoria</div>
 				</div>
 				<div class="col-4">
@@ -98,7 +98,7 @@
 	
 	        
 	        $.ajax({
-				url: 'registraPlatoAlias',
+				url:'${pageContext.request.contextPath}/registraPlatoAlias',
 				type: 'POST',
 				data: $(form).serialize(),
 				success: function (response) {

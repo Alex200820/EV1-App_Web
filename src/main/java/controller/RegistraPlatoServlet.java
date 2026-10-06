@@ -20,21 +20,21 @@ public class RegistraPlatoServlet extends HttpServlet {
 		// 1 Recibir los datos del formulario del JSP
 		String nombre = req.getParameter("nombre");
 		String proteinaPlato = req.getParameter("proteinaPlato");
-		String categoria = req.getParameter("categoria");
+		int idCategoria = Integer.parseInt(req.getParameter("idCategoria"));
 		int tiempoPreparacion = Integer.parseInt(req.getParameter("tiempoPreparacion"));
 		String disponibilidad = req.getParameter("disponibilidad");
 		String popularidad = req.getParameter("popularidad");
 		double precio = Double.parseDouble(req.getParameter("precio"));
 
 		System.out.println(
-				"Datos recibidos: " + nombre + " - " + proteinaPlato + " - " + categoria + " - " + tiempoPreparacion + " - " 
+				"Datos recibidos: " + nombre + " - " + proteinaPlato + " - " + idCategoria + " - " + tiempoPreparacion + " - " 
 						+ disponibilidad + " - " + popularidad + " - " + precio);
 
 		// 2 Crear un objeto Libro
 		Plato plato = new Plato();
 		plato.setNombre(nombre);
 		plato.setProteinaPlato(proteinaPlato);
-		plato.setCategoria(categoria);
+		plato.setIdCategoria(idCategoria);
 		plato.setTiempoPreparacion(tiempoPreparacion);
 		plato.setDisponibilidad(disponibilidad);
 		plato.setPopularidad(popularidad);
