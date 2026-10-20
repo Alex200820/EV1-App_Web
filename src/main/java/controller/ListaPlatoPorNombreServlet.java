@@ -43,6 +43,5 @@ public class ListaPlatoPorNombreServlet extends HttpServlet {
 		
 		
 	}
-
 	
 }

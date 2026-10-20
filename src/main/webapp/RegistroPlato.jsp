@@ -46,12 +46,18 @@
 					<input type="number" class="form-control" id="tiempoPreparacion" name="tiempoPreparacion" placeholder="Ej. 30" maxlength="30" required>
 					<div class="invalid-feedback">Ingrese el tiempo de preparación</div>
 				</div>
-				<div class="col-4">
-					<label for="disponibilidad">Disponibilidad</label> 
-					<input type="text" class="form-control" id="disponibilidad" name="disponibilidad" placeholder="Ej. Si/No" maxlength="30" required>
-					<div class="invalid-feedback">Ingrese la disponibilidad</div>
-				</div>
 				
+				<div class="col-4">
+				    <label for="disponibilidad">Disponibilidad</label>
+				    <select class="form-select" id="disponibilidad" name="disponibilidad" required>
+				        <option value="">[Seleccione]</option>
+				        <option value="1">Disponible</option>
+				        <option value="0">No disponible</option>
+				    </select>
+				    <div class="invalid-feedback">
+				        Seleccione la disponibilidad
+				    </div>
+				</div>
 				<!-- DROPDOWN DE POPULARIDAD ORIGINAL -->
 				<div class="col-4" style="margin-top: 2%;">
 					<label for="popularidad">Popularidad</label>
