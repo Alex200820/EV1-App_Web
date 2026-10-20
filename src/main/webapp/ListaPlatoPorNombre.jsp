@@ -101,7 +101,16 @@ function agregarGrilla(lista){
 				{data: "proteinaPlato",className:'text-center'},
 				{data: "idCategoria", className:'text-center'},
 				{data: "tiempoPreparacion", className:'text-center'},
-				{data: "disponibilidad",className:'text-center'},
+				{
+				    data: function(row) {
+				        return row.disponibilidad == 1
+				            ? "Disponible"
+				            : (row.disponibilidad == 0
+				                ? "No disponible"
+				                : "");
+				    },
+				    className: 'text-center'
+				},
 				{data: "popularidad", className:'text-center'},
 				{data: "precio", className:'text-center'},
 				{
