@@ -1,0 +1,47 @@
+
+/* Indicadores de disponibilidad */
+.estado-disponible,
+.estado-no-disponible {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    letter-spacing: 0.2px;
+}
+
+/* Estado disponible */
+.estado-disponible {
+    color: #166534;
+    background-color: #E8F7EE;
+    border: 1px solid #BBE7CB;
+}
+
+/* Estado no disponible */
+.estado-no-disponible {
+    color: #991B1B;
+    background-color: #FDECEC;
+    border: 1px solid #F8CACA;
+}
+
+/* Círculo indicador */
+.estado-disponible::before,
+.estado-no-disponible::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.estado-disponible::before {
+    background-color: #16A34A;
+}
+
+.estado-no-disponible::before {
+    background-color: #DC2626;
+}
