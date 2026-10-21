@@ -17,6 +17,9 @@
     <link href="css/bootstrap-reboot.css" rel="stylesheet">
     <link href="css/bootstrap-utilities.css" rel="stylesheet">
     <link href="css/datatables.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link href="css/styles.css" rel="stylesheet">
+    
 </head>
 <body>
     <div class="container">
@@ -473,15 +476,22 @@
                         data: "tiempoPreparacion",
                         className: 'text-center'
                     },
+
                     {
                         data: function (row) {
-                            return row.disponibilidad == 1
-                                ? "Disponible"
-                                : (row.disponibilidad == 0
-                                    ? "No disponible"
-                                    : row.disponibilidad);
+                            if (row.disponibilidad == 1) {
+                                return '<span class="estado-disponible">' +
+                                       'Disponible</span>';
+                            }
+
+                            if (row.disponibilidad == 0) {
+                                return '<span class="estado-no-disponible">' +
+                                       'No disponible</span>';
+                            }
+
+                            return '<span class="text-secondary">Sin definir</span>';
                         },
-                        className: 'text-center'
+                        className: 'text-center align-middle'
                     },
                     {
                         data: "popularidad",
