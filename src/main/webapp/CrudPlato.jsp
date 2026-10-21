@@ -335,37 +335,57 @@
             });
 
             // Registrar plato
-            $("#id_btn_registra").click(function () {
-                console.log("click en registrar");
-
-                if (!$("#id_form_registra")[0].checkValidity()) {
-                    $("#id_form_registra")[0].reportValidity();
-                    return;
-                }
-                $.ajax({
-                    url: 'crudPlatoAlias',
-                    type: 'POST',
-                    data: $('#id_form_registra').serialize(),
-                    success: function (data) {
-                        agregarGrilla(data);
-                        const modal = bootstrap.Modal.getInstance(
-                            document.getElementById('id_div_modal_registra')
-                        );
-                        if (modal) {
-                            modal.hide();
-                        }
-                        $("#id_form_registra")[0].reset();
-                    },
-                    error: function (xhr, status, error) {
-                        console.error('Error al registrar:', error);
-                        Swal.fire({
-                            title: 'Error',
-                            text: 'Error al registrar el plato',
-                            icon: 'error'
-                        });
-                    }
-                });
-            });
+			$("#id_btn_registra").click(function () {
+			    console.log("click en registrar");
+			
+			    if (!$("#id_form_registra")[0].checkValidity()) {
+			        $("#id_form_registra")[0].reportValidity();
+			        return;
+			    }
+			
+			    $.ajax({
+			        url: 'crudPlatoAlias',
+			        type: 'POST',
+			        data: $('#id_form_registra').serialize(),
+			
+			        success: function (data) {
+			            // Actualizar la tabla
+			            agregarGrilla(data);
+			
+			            // Cerrar el modal
+			            const modal = bootstrap.Modal.getInstance(
+			                document.getElementById('id_div_modal_registra')
+			            );
+			
+			            if (modal) {
+			                modal.hide();
+			            }
+			
+			            // Limpiar el formulario
+			            $("#id_form_registra")[0].reset();
+			
+			            // Alerta de registro exitoso
+			            Swal.fire({
+			                title: '¡Registro exitoso!',
+			                text: 'El plato se registró correctamente.',
+			                icon: 'success',
+			                confirmButtonText: 'Aceptar'
+			            });
+			        },
+			
+			        error: function (xhr, status, error) {
+			            console.error('Error al registrar:', error);
+			            console.error('Respuesta:', xhr.responseText);
+			
+			            Swal.fire({
+			                title: 'Error',
+			                text: 'No se pudo registrar el plato.',
+			                icon: 'error',
+			                confirmButtonText: 'Aceptar'
+			            });
+			        }
+			    });
+			});
 
             // Actualizar plato
             $("#id_btn_actualiza").click(function () {
