@@ -243,7 +243,6 @@
                                 </select>
                             </div>
                         </div>
-
                         <div class="row mb-3">
                             <label for="id_act_precio"
                                 class="col-md-3 col-form-label">Precio</label>
@@ -267,7 +266,6 @@
         </div>
     </div>
     <!-- FIN MODAL DE ACTUALIZACIÓN -->
-
     <script type="text/javascript">
 
         $(document).ready(function () {
