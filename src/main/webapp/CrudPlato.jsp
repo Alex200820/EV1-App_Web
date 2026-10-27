@@ -19,7 +19,6 @@
     <link href="css/datatables.css" rel="stylesheet">
     <!-- Estilos personalizados -->
     <link href="css/styles.css" rel="stylesheet">
-    
 </head>
 <body>
     <div class="container">
@@ -64,7 +63,6 @@
             </div>
         </div>
     </div>
-
     <!-- INICIO MODAL DE REGISTRO -->
     <div class="modal fade" id="id_div_modal_registra" tabindex="-1"
         aria-hidden="true">
