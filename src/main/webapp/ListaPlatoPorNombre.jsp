@@ -102,12 +102,20 @@ function agregarGrilla(lista){
 				{data: "idCategoria", className:'text-center'},
 				{data: "tiempoPreparacion", className:'text-center'},
 				{
-				    data: function(row) {
-				        return row.disponibilidad == 1
-				            ? "Disponible"
-				            : (row.disponibilidad == 0
-				                ? "No disponible"
-				                : "");
+				    data: function(row, type) {
+				        if (type !== 'display') {
+				            return row.disponibilidad;
+				        }
+
+				        if (row.disponibilidad == 1) {
+				            return '<span class="badge text-bg-success">Disponible</span>';
+				        }
+
+				        if (row.disponibilidad == 0) {
+				            return '<span class="badge text-bg-danger">No disponible</span>';
+				        }
+
+				        return '';
 				    },
 				    className: 'text-center'
 				},
